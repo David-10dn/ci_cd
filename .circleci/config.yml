@@ -18,6 +18,13 @@ workflows:
           version: '18.15'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+      - build-and-deploy:
+          requires:
+            - node/test
+          filters:
+            branches:
+              only:
+                - main
 
 jobs:
   build-and-deploy:
